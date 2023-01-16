@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Fundies Instructor</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='F16.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='F16.png') }}" class="icon" />
+  <h3>OpenAI Fundies Instructor</h3>
+
+  <div id="history" style="height:360px; width:720px; ; overflow-y: scroll;">
+    {% for text in historyChat %}
+        <p>{{ text }}</p>
+    {% endfor %}
+  </div>
+
+  <form action="/" method="post">
+    <input type="text" name="studentInput" placeholder="Ask you question here" required />
+    <input type="submit" value="Submit" />
+  </form>
+
+  <div>
+    <p>Token Count - Prompt: {{ tokenPrompt }}, Completion: {{ tokenCompletion }}, Total: {{ tokenTotal }}</p>
+  </div>
+
+</body>
