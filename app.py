@@ -40,14 +40,14 @@ def index():
 
 def readStudyGuide():
     # Used for testing API without wasting tokens
-    # with open("static/Test_Prompt.txt", "r", encoding="utf-8") as file:
-    #     currentStudyGudie = file.read()
-    #     return(currentStudyGudie)
-   
-    # Reads actual study guide ~2K tokens required
-    with open("static/Blk3_Unit1.txt", "r", encoding="utf-8") as file:
+    with open("static/Test_Prompt.txt", "r", encoding="utf-8") as file:
         currentStudyGudie = file.read()
         return(currentStudyGudie)
+   
+    # Reads actual study guide ~2K tokens required
+    # with open("static/Blk3_Unit1.txt", "r", encoding="utf-8") as file:
+    #     currentStudyGudie = file.read()
+    #     return(currentStudyGudie)
 
 def generate_prompt(studentInput):
     return """The following is a conversation with an AI instructor for high school graduates 
